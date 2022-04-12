@@ -2,6 +2,7 @@ const express = require('express')
 const morgan = require('morgan') // to handle middlewares
 const mongoose = require('mongoose'); //to use mongoose
 const { result } = require('lodash');
+const port = process.env.PORT || 3000;
 
 
 //importing the router
@@ -14,8 +15,8 @@ const app = express();
 //ADDING MONGO DB DATABASE CONNECTION
 const dbURI = 'mongodb+srv://Portablog:Portablog290.@nodetuts.f15nz.mongodb.net/Node-tuts?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then ((result) => app.listen(3000)) //log it to the console when connection to db is establised;;;  
-                                        //TO listen for request only when the database is connected
+    .then ((result) => app.listen(port)) //log it to the console when connection to db is establised;;;  
+                                        //TO listen for request only when the database is connected at port 3000
     .catch ((err) => console.log(err)) //log error to the console if not connected
 
 
