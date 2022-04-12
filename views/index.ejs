@@ -1,0 +1,47 @@
+
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+<body>
+
+    <!-- creating dynamic data -->
+    <!-- <% const name = "mario" %> -->
+             
+                <!-- outputing dynamic data (must add the = if you are outputig  data)-->
+                <!-- <p> <%= name %> </p> -->
+
+        
+    <!-- Adding navbar from/as partials -->
+
+    <%- include('./partials/nav.ejs') %> 
+
+
+
+
+        <div class="blogs content">
+            <h2>All Blogs</h2>
+            <% if (Blogs.length > 0) { %> 
+    
+                <% Blogs.forEach (blog => { %>
+                    
+                    <div class="each-blog">
+                        <a href="/blog/<%= blog._id %>">
+                    <!-- to pass the id of the clicked blog through the route -->
+                        <h3 class="title"><%= blog.title %> </h3>
+                        <p class="snippet"><%= blog.snippet %> </p>
+                    
+                        </a>
+                    </div>
+    
+                  <% }) %> 
+                <% } else { %>
+                    <p>There is no blog to display</p>
+               <% } %> 
+
+        </div>
+
+
+
+
+        <%- include('./partials/footer.ejs') %> 
+</body>
+</html>

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+body{
+    font-family: 'Poppins' , sans-serif;
+    padding: 2rem 12rem 2rem 12rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.site-title h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+
+.site-title p {
+    font-size: 1.5rem;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.nav-item{
+    display: flex;
+    column-gap: 5rem;
+    text-decoration-style: none;
+    text-transform: uppercase;
+}
+
+footer{
+    bottom: 0;
+    position: absolute;
+    width: 100vh;
+    background-color: rgb(218, 218, 218);
+    margin: 0 auto;
+}
+
+footer p {
+    text-align: center;
+}
+
+
+.content{
+    margin-top: 3rem;
+}
+
+.content h2{
+    text-align: center;
+    color: white;
+    background-color: rgb(7, 7, 54);
+}
+
+.each-blog{
+    box-shadow: 2px 2px 6px rgb(226, 223, 223);
+    margin-top: 3rem;
+    padding-left: 5rem;
+    border-radius: 5px;
+}
+
+.create-blog{
+    width: 460px;
+    padding: 3rem;
+    box-shadow: 2px 2px 6px rgb(226, 223, 223)!important;
+    margin: 3rem auto;
+}
+
+.submit-btn{
+    background-color: rgb(7, 7, 54);
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    margin-bottom :2rem ;
+}
+
+textarea{
+    width: 300px;
+    height: 120px;
+}
+
+body{
+    background-image: url('/assets/1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo{
+    width: 5rem;
+    height: 4rem;
+    margin-top: 4rem;
+}
+
+.title-h{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+}

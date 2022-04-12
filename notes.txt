@@ -1,0 +1,17 @@
+view engines helps us to output dynamic content in the html template on the browser.
+EJS is the best with nice features.
+
+all the files (.ejs) must be inside "views" folder when using ejs view engine. OR
+
+also add the code 
+app.set('views', 'the name of the folder');
+after register ejs view engine
+
+
+
+NOW you dont send html files, you render ejs
+
+
+PARTIALS IN EJS
+partials are like component in frontend frameworks to avoid code repetition.
+you have to use <%- include('path') %> at where you want to use it in your views files

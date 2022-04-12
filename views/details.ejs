@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %> 
+
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+        <div class="details content">
+            <h2><%= blog.title %> </h2>
+        <div class="content">
+            <p><%= blog.body %> </p>
+        </div>
+
+        <button class="delete" data-doc="<%= blog._id%>">Delete</button> 
+        <!-- the data-doc is used to store the id into the data attribute, the doc could be anything -->
+        </div>
+
+
+    <%- include('./partials/footer.ejs') %> 
+
+
+    <!-- The delete request is been handled in the frontend in the browser, using some ajax code to send api request to the back end using fetch api -->
+    <script>
+        const deleteReq = document.querySelector('.delete');
+
+        deleteReq.addEventListener('click', (e) => {
+            // create the link to the endpoint in the backend, i.e the link at which the delete process will take place in the database and atached the method of the request
+            //a link can have several request methods
+            const endpoint = `/blog/${deleteReq.dataset.doc}` //dataset to get the variable store inside the doc. in the button
+
+            fetch(endpoint, {
+                method: 'DELETE' //using the fetch api in the browser, the method of the reuqest is Delete
+            })
+            .then ((response) => response.json())  //response is what the backend send to us as response in frontend after completing the action, but we can use it like that becuase its a json, so we have to parse it (response.json()),
+            // .then((data) => console.log(data)) //the response is what we now get inside data after it as been parsed, buh we just want to redirect,
+            .then((data) => window.location.href= data.redirect) //so the frontend will redirect for us using the window object.location = the data we get. the property in it which is redirect  sent form backend {redirect : '/blog'}. (i.e the link we want to redirect to)
+            .catch((err) => {
+                console.log(err)//this error will show in the browser console becuase is from the frontent
+            })
+        })
+
+
+
+    </script>
+</body>
+</html>
